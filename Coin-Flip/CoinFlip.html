@@ -5,24 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CoinFlip.css">
+  <script src="CoinFlip.JS"></script>
   <title>Coin Flip</title>
 </head>
 <body>
   <h1>Star or King</h1>
   <div class="coins-df">
-    <div class="coins-stats"></div>
+    <div class="coins-stats">
+      <p class="stats"></p>
+    </div>
     <div class="coin-main">
       <div class="coin-flapping">
-        <div class="coin-face-front">
-          <div class="coin-inner"><img class="Star" src="img/Star.png"></div>
-        </div> 
-        <div class="coin-face-back">
-          <div class="coin-inner"><img class="king" src="img/KING.png"></div>
-        </div>
-      </div>
+      </div> 
     </div>
   </div>
-  <button>Flip the coin!</button>
+  <div class="buttons">
+    <button onclick="coinFlip();" class="flip-button">Flip the coin!</button>
+  </div>
+  <div class="buttons" >
+    <button class="reset-button" onclick="
+    stats.KING = 0;
+    stats.STAR = 0;
+    localStorage.removeItem('stats');
+    updateStatsElement();
+    ">Reset Stats</button>
+  </div>
+  
   
 </body>
 </html>
